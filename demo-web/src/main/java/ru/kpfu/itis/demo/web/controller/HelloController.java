@@ -26,6 +26,12 @@ public class HelloController {
         return "redirect:notes";
     }
 
+    @GetMapping("/test")
+    @ResponseBody
+    public String test(){
+        return "Hello World";
+    }
+
     @GetMapping("/note")
     public String getAdd(){
         return "post";
