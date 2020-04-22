@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Консоль управления</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen"/>
+
+    <script src="js/responsivevoice.js"></script>
+    <script src="js/sockjs.min.js"></script>
+    <script src="js/stomp.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body class="purple darken-1">
+<div class="row valign-wrapper login-box">
+    <div class="col s12 m8 l6 offset-l3 offset-m2 valign">
+        <div class="card">
+            <div class="card-content voice-card">
+                <span class="card-title">Консоль управления</span>
+                <form class="row">
+                    <div class="input-field col s12">
+                        <textarea id="text" class="materialize-textarea"></textarea>
+                        <label for="text">Текст сообщения</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="voice">
+                        </select>
+                        <label for="voice">Голос</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <p class="range-field">
+                            <label for="pitch">Тембр</label>
+                            <input type="range" id="pitch" min="0" max="2" step="0.1"/>
+                        </p>
+                    </div>
+                    <div class="input-field col s12  m4 l4">
+                        <p class="range-field">
+                            <label for="rate">Скорость</label>
+                            <input type="range" id="rate" min="0" max="1.5" step="0.1"/>
+                        </p>
+                    </div>
+                    <div class="input-field col s12  m4 l4">
+                        <p class="range-field ">
+                            <label for="volume">Громкость</label>
+                            <input type="range" id="volume" min="0" max="1" step="0.1"/>
+                        </p>
+                    </div>
+                </form>
+
+            </div>
+            <hr>
+            <div class="card-action right-align">
+                <a class="waves-effect waves-teal btn teal lighten-5 grey-text" onclick="speech();">Озвучить</a>
+                <a class="waves-effect waves-light btn" onclick="sendMessage();">Отправить</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var voices = document.getElementById('voice');
+        var voicelist = responsiveVoice.getVoices();
+
+        voicelist.forEach(function (voice) {
+            var option = document.createElement('option');
+            option.value = voice.name;
+            option.innerText = voice.name;
+            voices.append(option)
+        });
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, {});
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+html,
+body,
+.login-box {
+    height: 99%;
+}
+
+.voice-card{
+    padding-bottom: 0 !important;
+}
