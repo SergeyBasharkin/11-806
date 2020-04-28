@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="/css/materialize.min.css?ver=1" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection"/>
 
     <#list css as style>
         <link type="text/css" rel="stylesheet" href="${style}">

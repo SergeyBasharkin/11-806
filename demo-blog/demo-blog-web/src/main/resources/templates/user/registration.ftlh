@@ -5,10 +5,10 @@
         <div class="col s12 m6 l4 push-l4 push-m3">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">Card Title</span>
+                    <span class="card-title">Registration</span>
 
                     <div class="row">
-                        <form class="col s12" action="/reg" method="post">
+                        <form class="col s12" action="/registration" method="post">
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input name="username" id="username" type="text" class="validate <#if errors?? && errors.getFieldError("username")??>invalid</#if>">

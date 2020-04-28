@@ -16,14 +16,9 @@ public class Comment extends AutoincrementEntity {
 
     private String body;
 
-    private Long userId;
-    private Long postId;
-
     @ManyToOne
-    @JoinColumn(name = "postId")
     private Post post;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
     private User user;
 }

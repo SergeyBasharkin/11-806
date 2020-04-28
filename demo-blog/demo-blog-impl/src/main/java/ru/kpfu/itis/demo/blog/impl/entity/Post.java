@@ -15,10 +15,7 @@ public class Post extends AutoincrementEntity {
     private String title;
     private String body;
 
-    private Long userId;
-
     @ManyToOne
-    @JoinColumn(name = "userId")
     private User user;
 
     @OneToMany(mappedBy = "post")
