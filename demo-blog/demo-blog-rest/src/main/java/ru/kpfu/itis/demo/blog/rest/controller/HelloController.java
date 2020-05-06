@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.kpfu.itis.demo.blog.impl.entity.User;
+import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
 @RequestMapping("/api")
 public class HelloController {
 
     @GetMapping("/hello")
-    public String hello(Authentication authentication){
+    public String hello(@ApiIgnore Authentication authentication){
         User user = (User) authentication.getPrincipal();
         return "hello " + user.getUsername();
     }

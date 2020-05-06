@@ -2,6 +2,7 @@ package ru.kpfu.itis.demo.blog.impl.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -13,6 +14,7 @@ import java.util.Collection;
 @Table
 @Entity
 @EqualsAndHashCode(callSuper = true)
+@ToString
 public class User extends AutoincrementEntity implements UserDetails {
 
     private String username;

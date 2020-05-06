@@ -10,6 +10,7 @@ import ru.kpfu.itis.demo.blog.impl.service.UserServiceDB;
 import ru.kpfu.itis.demo.blog.rest.exception.InvalidJwtAuthenticationException;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
 
