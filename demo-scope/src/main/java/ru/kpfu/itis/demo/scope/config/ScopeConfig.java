@@ -38,7 +38,7 @@ public class ScopeConfig {
 //    }
 
     @Bean
-    @Scope("prototype")
+    @Scope("counted")
     public Color color() {
         return new Color(
                 AnsiColor.values()[

@@ -4,7 +4,7 @@ import org.springframework.boot.ansi.AnsiOutput;
 
 public abstract class ConsolePrinter {
 
-    private final Color color;
+    private Color color;
     private final String text;
 
     public ConsolePrinter(Color color, String text) {
@@ -13,7 +13,9 @@ public abstract class ConsolePrinter {
     }
 
     public void print(){
-        System.out.println(AnsiOutput.encode(getColor().getColor()) + text );
+        color = getColor();
+        System.out.println(AnsiOutput.encode(color.getColor()) + text );
+//        System.out.println(AnsiOutput.encode(color.getColor()) + text );
     }
 
     protected abstract Color getColor();
