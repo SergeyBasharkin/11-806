@@ -71,15 +71,24 @@ public class RunCommand implements CommandLineRunner {
 //            });
 //        }).collect(Collectors.toList()));
 
-        postRepository.findAll((root, criteriaQuery, criteriaBuilder) -> {
-//            if (!criteriaQuery.getResultType().equals(Long.class))
-            Fetch<Post, Comment> comments = root.fetch("comments");
-            comments.fetch("user");
-            return null;
-        }).forEach(post -> {
-            System.out.println(post.getId());
+//        postRepository.findAll((root, criteriaQuery, criteriaBuilder) -> {
+////            if (!criteriaQuery.getResultType().equals(Long.class))
+//            Fetch<Post, Comment> comments = root.fetch("comments");
+//            comments.fetch("user");
+//            return null;
+//        }).forEach(post -> {
+//            System.out.println(post.getId());
+//            post.getComments().forEach(comment -> {
+//                System.out.println(comment.getId());
+//                System.out.println(comment.getUser().getUsername());
+//            });
+//        });
+
+
+        postRepository.findAll().forEach(post -> {
+            System.out.println("Post= " + post.getId());
             post.getComments().forEach(comment -> {
-                System.out.println(comment.getId());
+                System.out.println("Post.Comments.id=" + comment.getId());
                 System.out.println(comment.getUser().getUsername());
             });
         });

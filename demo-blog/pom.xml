@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>ru.kpfu.itis</groupId>
-	<artifactId>demo-blog</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-blog</name>
-	<description>Demo project for Spring Boot</description>
+    <groupId>ru.kpfu.itis</groupId>
+    <artifactId>demo-blog</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-	<modules>
-		<module>demo-blog-api</module>
-		<module>demo-blog-rest</module>
-		<module>demo-blog-impl</module>
-	</modules>
+    <modules>
+        <module>demo-blog-api</module>
+        <module>demo-blog-web</module>
+        <module>demo-blog-impl</module>
+        <module>demo-blog-rest</module>
+    </modules>
 
 </project>

@@ -19,6 +19,6 @@ public class Comment extends AbstractEntity {
     @ManyToOne
     private Post post;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private User user;
 }

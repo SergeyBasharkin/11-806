@@ -2,7 +2,7 @@ package ru.kpfu.itis.demo.scope.printer;
 
 import org.springframework.boot.ansi.AnsiOutput;
 
-public abstract class ConsolePrinter {
+public class ConsolePrinter {
 
     private Color color;
     private final String text;
@@ -13,10 +13,10 @@ public abstract class ConsolePrinter {
     }
 
     public void print(){
-        color = getColor();
+//        color = getColor();
         System.out.println(AnsiOutput.encode(color.getColor()) + text );
 //        System.out.println(AnsiOutput.encode(color.getColor()) + text );
     }
 
-    protected abstract Color getColor();
+//    protected abstract Color getColor();
 }

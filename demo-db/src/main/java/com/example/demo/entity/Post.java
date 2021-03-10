@@ -28,7 +28,7 @@ public class Post extends AbstractEntity {
     private String title;
     private String body;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Comment> comments;
 
 }

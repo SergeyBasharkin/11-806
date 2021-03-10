@@ -1,6 +1,5 @@
 package ru.kpfu.itis.demo.scope.config;
 
-import javafx.util.Pair;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.config.Scope;
 
@@ -10,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class CountedScopeConfigurer implements Scope {
 
-    private AtomicInteger count = new AtomicInteger();
     Map<String, Pair<AtomicInteger, Object>> atomicIntegerMap = new HashMap<>();
 
     @Override
@@ -21,7 +19,6 @@ public class CountedScopeConfigurer implements Scope {
             if (pair.getKey().get() >= 2) {
                 atomicIntegerMap.put(s, new Pair<>(new AtomicInteger(), objectFactory.getObject()));
             }
-
         } else {
             atomicIntegerMap.put(s, new Pair<>(new AtomicInteger(1), objectFactory.getObject()));
         }

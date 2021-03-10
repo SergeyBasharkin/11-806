@@ -53,12 +53,7 @@ public class ScopeConfig {
 //    3. Profit
     @Bean
     public ConsolePrinter consolePrinter() {
-        return new ConsolePrinter(color(), new DummyCreator().create(String.class)) {
-            @Override
-            protected Color getColor() {
-                return color();
-            }
-        };
+        return new ConsolePrinter(color(), new DummyCreator().create(String.class));
     }
 
 
